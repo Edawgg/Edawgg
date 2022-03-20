@@ -1,0 +1,101 @@
+/*The universal selector sets a standard at the beggining that can be over-rided to
+the latest change by individul selectors and syntax*/
+* {
+    box-sizing: border;
+    margin: 5px;
+    font-family: Verdana, Georgia, Tahoma, sans-serif;
+    text-align: center;
+}
+/*A background image is set with a background color as a placeholder, no repeat is set for exactly 
+what it sounds like. Setting a height helps it to have a base standard, cover is so that it incases
+the body.*/
+body {
+    background-image: url("../images/digital-marketing-meeting.jpg");
+    background-color: #d9dcd6;
+    background-repeat: no-repeat;
+    height: 700px;
+    background-size: cover;
+}
+/*header could have been used as well, to get the h1 heading font size and color and 
+it background color.*/
+h1 {
+    font-size: 40px;
+    background-color: #2a617c7e;
+    color: #ffffff;
+}
+/*keeping the original multi-color heading, removing the span tags and multiple class selectors, replacing 
+them with an id selector and bdi tags to change text color within one word.*/
+#seo {
+    color: #eca305;
+}
+/*specifying li parented by nav removed the bullets, seperated each and allowed them to be horizontal.*/
+nav li {
+    float: left;
+    display: block;
+    margin: 20px;
+    font-size: 18px;
+    color: #eca305;
+    background-color: aliceblue;
+    background-size: cover;
+}
+/*keeping a color, font size, and display consistent for all p elements*/
+p {
+    font-size: 16px;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    color: black;
+}
+/*the comma allows both h2 and h3 elements to have the same design without having to give it to them
+seperately, it also keeps the importance in order*/
+h2, h3 {
+    text-align: center;
+    margin-top: 30px;
+    color: azure;
+}
+/*setting the section display to block allowed for the elements it parent to float into the right places.*/
+section {
+    display: block;
+}
+/*all the articles are styled the same externally float to the left with a 20px margin, 70% width gives it
+a set width for multiple screen sizes.*/
+article {
+    float: left;
+    width: 70%;
+    margin: 20px;
+    background-color: #2588bd90;
+}
+/*aside is floating to the right of the articles, set to a max height, a negative margin top value to pull it up
+and 20% width so that it fit on the side.*/
+aside {
+    float: right;
+    display: table;
+    margin-top: -550px;
+    margin-right: 20px;
+    max-height: 740px;
+    width: 20%;
+    background-color: #2589bd90;
+}
+/*specifies the 3 .png img in the aside element and how they are sized.*/
+figure img {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    padding: 5px;
+}
+/*specifies the three img elements in the article and how they are sized*/
+img {
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+    padding: 20px;
+}
+/*did not include with h1 and h2 for sizing purposes.*/
+figcaption {
+    text-align: center;
+    color:azure;
+}
+/*this styling is meant to keep the footer down at the bottom.*/
+footer {
+    display: inline-block;
+}
