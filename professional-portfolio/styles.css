@@ -1,0 +1,269 @@
+* {
+    border-style: border-box;
+    margin: 0px;
+    padding: 0px;
+   }
+body {
+   background: #b1b1b1;
+}
+
+main {
+   background: #ffffff;
+}
+   
+   section.container {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     background-color: #b1b1b8;
+   }
+   
+   header {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+   }
+   
+   nav.container {
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+   }
+   
+   h1 {
+    font-size: 36px;
+    padding-left: 200px;
+    margin-right: 10px;
+    background-color: #a0fef0;
+   }
+   
+   h2 {
+    background-color: #a0fef0;
+    padding: 5px;
+   }
+   
+   button {
+    margin: 5px;
+    background: transparent;
+    border: none;
+    border-bottom: solid #a0fef0 2px;
+    padding: 2px;
+    color: #a0fef0
+   }
+
+   .but1 {
+       color:#a0fef0;
+   }
+   
+  #prahguecks {align-self: center;}
+
+  
+   
+   a {
+    color: #b5b5b5;
+    text-decoration: none;
+   }
+   a #bout-mi {
+    color: #a0fef0;
+   }
+   
+   .subtitle {
+     display: flex;
+     flex-flow: row-reverse;
+     justify-content: space-evenly;
+     align-items: end;
+     background-image: url(assets/images/sbttlbkgrd);
+   }
+   
+   .profile {
+     border: solid #a0fef0 5px;
+   }
+     
+     /* Flex layout and individual style*/
+   
+     .drop .dbtn {
+       font-size: 14px;
+       background-color: transparent;
+       }
+     
+       .project-links {
+       display: none;
+       background-color: #f1f1f1;
+       min-width: inherit;
+     }
+     
+     /* Links inside the dropdown */
+     .project-links a {
+       color: black;
+       text-align: center;
+       text-decoration: none;
+       display: block;
+       border-bottom: solid 1px;
+     }
+     
+     /* Change color of dropdown links on hover */
+     .project-links a:hover {
+       background-color: #ddd;
+     }
+     
+     /* Show the dropdown menu on hover */
+     .drop:hover .project-links {
+         display: block;
+         width: inherit;
+         position: fixed;
+         text-align: center;
+         
+       }
+       
+  a #top {
+      color: #a0fef0;
+      padding: 5px;
+   }
+
+a.hdshot img {
+   border: solid 5px #a0fef0;
+}
+
+.subtitle {
+   background-image: url(assets/images/sbttlbkgrd.jpg);
+   padding-top: 5px;
+}
+
+div main {
+   background-color: #ffffff;
+   display: inline-flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+}
+
+.about-me , .resume , .footer {
+   display: inline-flex;
+   flex-flow: row nowrap;
+}
+section.projects {
+   display: inline-flex;
+   flex-direction: row;
+   min-height: fit-content;
+   max-width: 600px;
+   align-items: stretch;
+}
+
+div#main {
+   display: inline-flex;
+   flex-flow: row wrap;
+   max-width: 600px;
+   height: auto;
+   
+}
+
+h3 {
+   min-width: 300px;
+   font-size: 30px;
+   text-align: inline-end;
+}
+
+h3#pj {
+   display: inline-flex;
+   align-self: center;
+   justify-content: flex-end;
+}
+
+summary {
+   display: inline-flex;
+   width: 600px;}
+
+#i {
+   width: 600px;
+   max-height: 300px;
+   display: inline-flex;
+   margin-bottom: 5px;
+   border: solid #a0fef0 3px;
+   background-color: #a0fef0;
+}
+
+#i img {
+   display: inherit;
+   position: relative; 
+   
+}
+
+a#1 {
+   display: flex;
+   position: absolute;
+   
+}
+
+#ii , #iii {
+   display: inline-flex;
+   width: 49%;
+   height: fit-content;
+   border: solid 2px #a0fef0;
+   justify-content: space-between;
+   align-items: center;
+   margin: 1px;
+
+}
+
+#iii img {
+   max-height: 150px;
+   
+}
+
+div#ii a , div#iii a {
+   background: #a0fef0;
+   position:absolute;
+   margin-top: 12%
+}
+
+#iv , #v {
+   display: inline-flex;
+   width: 49%;
+   height: auto;
+   border: solid #a0fef0 2px;
+   margin: 1px;
+}
+
+div#iv a , div#v a {
+   background: #a0fef0;
+   position: absolute;
+   margin-top: 7%
+}
+
+div#iv img , div#v img {
+   width: 300px
+}
+
+#rezma , .resume p  {
+   margin-top: 30px;
+}
+
+.resume p , summary {
+   border-left: solid 2px;
+   
+}
+
+section.footer {
+   margin-top: 20px 
+}
+
+footer p {
+    color: black;
+    text-align: left;
+    display: inline;
+}
+
+   
+   ||media query
+
+
+   @media (max-width: 600px) {
+       .container {
+           flex-flow: column wrap;
+       }
+       nav.container {
+           flex-direction: column;
+           align-content: flex-end;
+       }
+     }
+   
+   
