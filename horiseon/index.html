@@ -1,0 +1,105 @@
+<!--Decleration of document type.-->
+<!DOCTYPE html>
+<!--Opening tag for HTML and specifying the language of orgin.-->
+<html lang="en-us">
+    <!--'head' contains the metadata.-->
+    <head>
+        <!--'meta' in this case has a character set attribute-->
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--'link' has relationship attribute to support the href 'URL' of the
+        external CSS.-->
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <!--Is displayed in the browser tab-->
+        <title>Consumer demands and optimizing your company website</title>
+    </head>
+    <!--body contains the code for the displayed webpage-->
+    <body>
+        <!--'header' (semantic) is used to clearly define the webpages title/company name.-->
+        <header> 
+            <!--'h1' is the title or most important key information, within is a 'bdi' paired with an id element 
+            selector replacing the 'span' tag (which is not a semantic element).-->
+            <h1>Hori<bdi id="seo">seo</bdi>n</h1>
+        </header>    
+        <!--'nav' is a (semantic) element that disabled users have the ability to use screen readers to determine if 
+        whether or not to omit the inital rendering not only is it more user friendly for someone disabled, it is 
+        also distinguishing a list of the 3 main topics discussed at the top of the webpage.-->   
+        <nav>
+            <ul>
+                <li>Search Engine Optimization</li>
+                <li>Online Reputation Management</li>
+                <li>Social Media Marketing</li>
+            </ul>
+        </nav>  
+        <!--'section' is a (semantic) element defining a section of a webpage.-->  
+        <section>
+            <!--This section contains three 'article' (semantic) elements defining and seperating one another as 
+            independent pieces of information. Each of these parent a 'h2' heading which is grouped by the (semantic) 
+            element 'hgroup'. 'img' tag is also in all three articles, containing the images src (url), alt=ernative 
+            text for a place holder if the image does not render, and I included style decleration within to take away
+            the need to independently label each article with a class as well as each img with a class.-->
+            <article>
+            <img src="./assets/images/search-engine-optimization.jpg" 
+            alt="search engine optimization" style="display: inline; float: left; margin: 10px;">
+                <hgroup>
+                    <h2>Search Engine Optimization</h2>
+                    <p>The dominance of mobile internet use means that users are searching for the right business as 
+                        they travel, shop, or sit on their couch at home. Search Engine Optimization (SEO) allows you 
+                        to increase your visibility and find the right customers for your business.</p>
+            </article>
+            <article>
+                    <img src="./assets/images/online-reputation-management.jpg"
+                         alt="online reputation management" 
+                         style="display: inline; float: right; margin: 10px;">
+                    <h2>Online Reputation Management</h2>
+                    <p>The web is full of opinions, and some of these can be negative. Social media allows anyone with
+                       an internet connection to say whatever they want about your business. Online Reputation 
+                       Management gives you the control over what potential customers see when they search for your 
+                       business.</p>
+            </article>
+            <article>
+                    <img src="./assets/images/social-media-marketing.jpg"
+                    alt="social media marketing" 
+                    style="display: inline; float: left; margin: 10px;">
+                    <h2>Social Media Marketing</h2>
+                    <p>Social media continues to have a sizable influence on buying habits. Social media marketing 
+                        helps you determine which platforms are suited to your brand, using analytics to find the 
+                        right markets and increase your lead generation.</p>
+                </hgroup>
+            </article>
+            <!--'aside' (semantic) defines a piece of info in most cases to the side of content that it relates to
+            but also makes sense by itself.-->
+            <aside>
+                <!--'figure' and 'figcaption' both (semantic) are used for seperating and labelling each img 
+                    individually, it lowers the importance and also groups the img and their description in a 
+                    different way than seen above.-->
+                <figure>    
+                    <figcaption>Lead Generation</ficaption>
+                    <img src="./assets/images/lead-generation.png"
+                     alt="lead generation">
+                    <p>Inbound strategies for lead generation require less work for your business, bringing customers 
+                        directly to your website.</p>
+                </figure>
+                <figure>
+                    <figcaption>Brand Awareness</figcaption>
+                    <img src="./assets/images/brand-awareness.png"
+                     alt="brand awareness">   
+                    <p>Users find your business through paid and organic searches, increasing the search ranking and 
+                        visibility for your business.</p>
+                </figure>
+                <figure>
+                    <figcaption>Cost Management</figcaption>
+                    <img src="./assets/images/cost-management.png" 
+                     alt="cost management">     
+                    <p>As the search ranking for your business increases, your advertising costs decrease, and you no 
+                        longer need to advertise your page.</p>
+                </figure>
+            </aside>
+            <!--'footer' is found at the bottom of the page, containing the copyright and author information.-->
+            <footer>
+                <h3>Made with ❤️️ by Horiseon</h3>
+                <br>
+                <p>&copy; 2019 Horiseon Social Solution Services, Inc.</p>
+            </footer>
+        </section>   
+    </body>
+</html>
