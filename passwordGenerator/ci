@@ -1,0 +1,103 @@
+name: ci
+
+on:
+  schedule:
+    - cron: '0 10 * * *' # everyday at 10am
+  push:
+    branches:
+      - 'dev'
+      - 'releases/v*'
+  pull_request:
+    branches:
+      - 'dev'
+      - 'releases/v*'
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target_branch: 'gh-pages'
+            keep_history: 'false'
+            verbose: 'true'
+          - target_branch: 'gh-pages-keep'
+            keep_history: 'true'
+            verbose: 'false'
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Init
+        run: |
+          sudo apt-get install tree
+          mkdir public
+      -
+        name: Gen dummy files and folders
+        run: |
+          MAXDIRS=5
+          MAXDEPTH=5
+          MAXFILES=30
+          MAXSIZE=3000
+          TOP=$(pwd|tr -cd '/'|wc -c)
+          populate() {
+            cd $1
+            curdir=$PWD
+            files=$(($RANDOM*$MAXFILES/32767))
+            for n in $(seq $files)
+            do
+              f=$(mktemp XXXXXX)
+              size=$(($RANDOM*$MAXSIZE/32767))
+              head -c $size /dev/urandom > $f
+            done
+            depth=$(pwd | tr -cd '/' | wc -c)
+            if [ $(($depth-$TOP)) -ge $MAXDEPTH ]
+            then
+              return
+            fi
+            unset dirlist
+            dirs=$(($RANDOM*$MAXDIRS/32767))
+            for n in $(seq $dirs); do
+              d=`mktemp -d XXXXXX`
+              dirlist="$dirlist${dirlist:+ }$PWD/$d"
+            done
+            for dir in $dirlist; do
+              populate "$dir"
+            done
+          }
+          populate $PWD/public
+      -
+        name: Gen dummy page
+        run: |
+          cat > public/index.html <<EOL
+          <!doctype html>
+          <html>
+            <head>
+              <title>GitHub Pages deployed!</title>
+            </head>
+            <body>
+              <p>GitHub Pages with <strong>${{ github.sha }}</strong> commit ID has been deployed through <a href="https://github.com/marketplace/actions/github-pages">GitHub Pages action</a> successfully on <strong>$(date)</strong>.</p>
+            </body>
+          </html>
+          EOL
+          tree -f -h ./public
+      -
+        name: Check GitHub Pages status
+        uses: crazy-max/ghaction-github-status@v2
+        with:
+          pages_threshold: major_outage
+      -
+        name: Deploy
+        if: success()
+        uses: ./
+        with:
+          target_branch: ${{ matrix.target_branch }}
+          keep_history: ${{ matrix.keep_history }}
+          build_dir: public
+          dry_run: ${{ github.event_name == 'pull_request' }}
+          verbose: ${{ matrix.verbose }}
+          jekyll: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
