@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Fundamentals">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coding Quiz- Test Your Knowledge!</title>
+    </head>
+    <body>
+        <section id="container">
+            <div id="fixed">
+                <div id="score">
+                    <button id="view-scores">View Your Highscore</button>
+                </div>
+                <div id="countdown"> Time Remaining:
+                    <p id="timer">1:00</p>
+                </div>
+            </div>
+            <div id="quiz-container">
+                <div id="homepage">
+                <h1>Quiz on Coding Fundamentals</h1>
+                <p>
+                    This timed quiz contains multiple choice questions,
+                    the questions are based off Fundamental languages in 
+                    todays standards. JavaScript basics as well as 
+                    advanced HTML and CSS will be the contents. The quiz 
+                    is scored by the amount of questions you answer
+                    correctly in the 5 minutes given (each = 1pt). Each 
+                    wrong answer subtracts 10 seconds from the time and 
+                    moves on to the next question.
+                </p>
+                <button id="start">Start</button>
+                </div>
+                <div id="questions" style="display: none;">
+                    <p>question</p>
+                    <div class="answer" id="a">A</div>
+                    <div class="answer" id="b">B</div>
+                    <div class="answer" id="c">C</div>
+                    <div><button>Submit</button></div>
+
+                </div>
+            </div>
+        </section>
+        </section>
+        <script src="assets/myScript.js"></script>
+        <script src="assets/styleScript.js"></script>
+    </body>
+</html>
