@@ -1,25 +1,11 @@
 //CSS styling
-const container = document.querySelector('#container');
-container.style.display = 'flex';
-container.style.flexDirection = 'column';
 
-const navBar = document.getElementById('fixed');
-navBar.style.display = 'inline-flex';
-navBar.style.flexDirection = 'row';
-navBar.style.justifyContent = 'space-between';
-
-const score = document.getElementById('view-scores');
-score.style.backgroundColor = '#9a0a00';
-
-const cntDwn = document.getElementById('countdown');
-cntDwn.style.textAlign = 'center';
-
-const timer = document.getElementById('timer');
-timer.style.fontSize = '24px';
-timer.style.border = 'solid';
 
 //1 minute timer 
-    document.getElementById('timer').innerHTML =
+const element = document.querySelector('#start');
+element.addEventListener('click', function startTimer(){
+
+document.getElementById('timer').innerHTML =
   01 + ":" + 00;
 startTimer();
 
@@ -45,15 +31,82 @@ function checkSecond(sec) {
   if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
   if (sec < 0) {sec = "59"};
   return sec;
-};
+}
 
-function change() {
-    const homepage = document.getElementById('homepage');
-    const questions = document.getElementById('questions');
-    homepage.style.display = 'none';
-    questions.style.display = 'block';
+});
+
+let questions = [
+    {
+        question : 'test?',
+        choiceA : 'looks',
+        choiceB : 'like',
+        choiceC : 'it',
+        correct : 'works'
+    },
+    {
+        question : '',
+        choiceA : '',
+        choiceB : '',
+        choiceC : '',
+        correct : ''
+    },
+    {
+        question : '',
+        choiceA : '',
+        choiceB : '',
+        choiceC : '',
+        correct : ''
+    },
+    {
+        question : '',
+        choiceA : '',
+        choiceB : '',
+        choiceC : '',
+        correct : ''
+    },
+    {
+        question : '',
+        choiceA : '',
+        choiceB : '',
+        choiceC : '',
+        correct : ''
+    },
+    {
+        question : '',
+        choiceA : '',
+        choiceB : '',
+        choiceC : '',
+        correct : ''
+    },
+    {
+        question : '',
+        choiceA : '',
+        choiceB : '',
+        choiceC : '',
+        correct : ''
+    },
+    {
+        question : '',
+        choiceA : '',
+        choiceB : '',
+        choiceC : '',
+        correct : ''
+    },
+    {
+        question : '',
+        choiceA : '',
+        choiceB : '',
+        choiceC : '',
+        correct : ''
+    },
+    {
+        question : '',
+        choiceA : '',
+        choiceB : '',
+        choiceC : '',
+        correct : ''
     }
+];
 
-document.getElementById('start').addEventListener('click' , startTimer() , change());
 
 

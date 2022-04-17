@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div id="quiz-container">
-                <div id="homepage">
+                <div id="home">
                 <h1>Quiz on Coding Fundamentals</h1>
                 <p>
                     This timed quiz contains multiple choice questions,
@@ -31,12 +31,14 @@
                 </p>
                 <button id="start">Start</button>
                 </div>
-                <div id="questions" style="display: none;">
-                    <p>question</p>
-                    <div class="answer" id="a">A</div>
-                    <div class="answer" id="b">B</div>
-                    <div class="answer" id="c">C</div>
-                    <div><button>Submit</button></div>
+                <div id="qna" style="display: none;">
+                    <div id="question"><p>question</p></div>
+                    <div id="choices">
+                        <div class="answer" id="a" onclick="checkAnswer('a')">A</div>
+                        <div class="answer" id="b" onclick="checkAnswer('b')">B</div>
+                        <div class="answer" id="c" onclick="checkAnswer('c')">C</div>
+                    </div>
+                </div>
 
                 </div>
             </div>
