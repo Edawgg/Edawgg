@@ -18,6 +18,5 @@ const timer = document.getElementById('timer');
 timer.style.fontSize = '24px';
 timer.style.border = 'solid';
 
-const ques = document.getElementById('questions');
-ques.style.display = "none";
+
 

@@ -1,6 +1,12 @@
 //CSS styling
 
-
+var start = document.getElementById('start');
+var home = document.getElementById('home');
+var qna = document.getElementById('qna');
+var question = document.getElementById('question');
+var chaoiceA = document.getElementById('A')
+var chaoiceB = document.getElementById('B')
+var chaoiceC = document.getElementById('C')
 //1 minute timer 
 const element = document.querySelector('#start');
 element.addEventListener('click', function startTimer(){
@@ -8,6 +14,14 @@ element.addEventListener('click', function startTimer(){
 document.getElementById('timer').innerHTML =
   01 + ":" + 00;
 startTimer();
+
+const home = document.getElementById('home');
+
+home.addEventListener('click' , toggleDisplay(),
+
+function toggleDisplay(){
+    home.innerHTML = onclick.call questions;
+});
 
 
 function startTimer() {
@@ -35,34 +49,34 @@ function checkSecond(sec) {
 
 });
 
-let questions = [
-    {
-        question : 'test?',
-        choiceA : 'looks',
-        choiceB : 'like',
-        choiceC : 'it',
-        correct : 'works'
+let questions = [{
+    
+        question : 'What is the correct relative path to myScript.js file located in the current folder?',
+        choiceA : 'https://www.username.github.io/project-name/assets/myScript.js',
+        choiceB : 'myScript.js',
+        choiceC : 'assets/myScript.js',
+        correct : 'C'
     },
     {
-        question : '',
-        choiceA : '',
-        choiceB : '',
-        choiceC : '',
-        correct : ''
+        question : 'What comparison Operator represents equal to?',
+        choiceA : '=',
+        choiceB : '==',
+        choiceC : '===',
+        correct : 'B'
     },
     {
-        question : '',
-        choiceA : '',
-        choiceB : '',
-        choiceC : '',
-        correct : ''
+        question : 'What comparison Operator represents equal value and equal type?',
+        choiceA : '=',
+        choiceB : '==',
+        choiceC : '===',
+        correct : 'C'
     },
     {
-        question : '',
-        choiceA : '',
-        choiceB : '',
-        choiceC : '',
-        correct : ''
+        question : 'What functions displays a window with a message and a user input feild?',
+        choiceA : 'window.alert()',
+        choiceB : 'text()',
+        choiceC : 'prompt()',
+        correct : 'C'
     },
     {
         question : '',
@@ -106,7 +120,7 @@ let questions = [
         choiceC : '',
         correct : ''
     }
-];
+]
 
 
 
